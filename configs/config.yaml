@@ -1,0 +1,39 @@
+# Configuration for Item2vec Recommendation System
+
+# Model parameters
+model:
+  embedding_dim: 64
+  learning_rate: 0.001
+  num_epochs: 100
+  batch_size: 1024
+  negative_samples: 5
+  window_size: 5
+  min_count: 1
+
+# Data parameters
+data:
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  min_user_interactions: 5
+  min_item_interactions: 5
+  random_seed: 42
+
+# Evaluation parameters
+evaluation:
+  metrics: ["precision", "recall", "map", "ndcg", "hit_rate"]
+  k_values: [5, 10, 20]
+  num_recommendations: 20
+
+# Training parameters
+training:
+  device: "auto"  # auto, cpu, cuda
+  num_workers: 4
+  save_checkpoints: true
+  checkpoint_frequency: 10
+
+# Demo parameters
+demo:
+  port: 8501
+  host: "localhost"
+  debug: false
